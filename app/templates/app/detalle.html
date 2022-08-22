@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      {% include 'base/header.html' %}
+   </head>
+   <body>
+      
+      <!-- CONTENT -->
+      <div class="catagary_section_2">
+         <div class="container-fluid">
+            <div class="row padd_top_10">
+               <div class="col-md-4">
+               {% for x in producto %}
+                  <div class="box_man">
+                     <h3 class="mobile_text">{{x.1}}</h3>
+                     <div class="mobile_img"><img src="{% static 'images/mobile-img.png' %}"></div>
+                     <div class="cart_main">
+                    
+                        <h4 class="samsung_text">Hankook</h4>
+                        <h6 class="rate_text"><a href="#">${{x.2}}</a></h6><br>
+                        <p class="lorem_text">Durabilidad mejorada y cualidades anti abrasión interna
+                            Durabilidad mejorada
+                            Longevidad de kilometraje optimizada
+                            Desempeño máximo en condiciones mojadas</p>
+                     </div>
+                  </div>
+               {% endfor %}
+               </div>
+            </div>
+         </div>
+   </body>
+   <footer>
+   <!-- FOOTER -->
+   {% include 'base/footer.html' %}
+   <!-- SCRIPTS -->
+   {% include 'base/scripts.html' %}
+   </footer>
+</html>
